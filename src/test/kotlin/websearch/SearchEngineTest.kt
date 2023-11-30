@@ -56,11 +56,14 @@ class SearchEngineTest {
     assertEquals("news", summary.query)
     assertEquals(2, summary.results.size)
 
-    assertResultsMatch("https://www.bbc.co.uk/news", 2, summary.results[0])
-    assertResultsMatch("https://www.imperial.ac.uk", 1, summary.results[1])
+    assertResultsMatch("https://www.bbc.co.uk/news", 2
+      , summary.results[0])
+    assertResultsMatch("https://www.imperial.ac.uk", 1
+      , summary.results[1])
   }
 
-  private fun assertResultsMatch(expectedUrl: String, numRefs: Int, searchResult: SearchResult) {
+  private fun assertResultsMatch(expectedUrl: String, numRefs: Int
+                                 , searchResult: SearchResult) {
     assertEquals(expectedUrl, searchResult.url.toString())
     assertEquals(numRefs, searchResult.numRefs)
   }
